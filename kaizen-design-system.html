@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen Design System - oFabio.com.br</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset e variáveis */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #333333;
+            --accent-color: #000000;
+            --background-color: #E7E5DE;
+            --text-color: #000000;
+            --light-text: #333333;
+            --max-width: 1200px;
+            --card-bg: rgba(0, 0, 0, 0.03);
+            --card-hover: rgba(0, 0, 0, 0.05);
+            
+            /* Espaçamento */
+            --spacing-xs: 0.25rem;  /* 4px */
+            --spacing-sm: 0.5rem;   /* 8px */
+            --spacing-md: 1rem;     /* 16px */
+            --spacing-lg: 1.5rem;   /* 24px */
+            --spacing-xl: 2rem;     /* 32px */
+            --spacing-2xl: 3rem;    /* 48px */
+            --spacing-3xl: 4rem;    /* 64px */
+            --spacing-4xl: 6rem;    /* 96px */
+            --spacing-5xl: 8rem;    /* 128px */
+            
+            /* Tipografia */
+            --text-xs: 0.75rem;     /* 12px */
+            --text-sm: 0.9rem;      /* 14px */
+            --text-base: 1rem;      /* 16px */
+            --text-md: 1.1rem;      /* 18px */
+            --text-lg: 1.2rem;      /* 20px */
+            --text-xl: 1.5rem;      /* 24px */
+            --text-2xl: 2rem;       /* 32px */
+            --text-3xl: 2.5rem;     /* 40px */
+            --text-4xl: 3rem;       /* 48px */
+            --text-5xl: 4.5rem;     /* 72px */
+            
+            /* Bordas */
+            --radius-sm: 0.5rem;    /* 8px */
+            --radius-md: 1rem;      /* 16px */
+            --radius-lg: 1.5rem;    /* 24px */
+            --radius-full: 100px;   /* Bordas totalmente arredondadas */
+        }
+
+        body {
+            font-family: 'Epilogue', sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: -0.3px;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Contêineres */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        .section {
+            padding: var(--spacing-4xl) 0;
+        }
+
+        /* Tipografia */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        h2 {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        h3 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--text-color);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .tag {
+            display: inline-flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.1);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--spacing-xl);
+            font-size: var(--text-sm);
+        }
+
+        .tag span:first-child {
+            font-weight: 500;
+        }
+
+        /* Navegação */
+        .header {
+            background-color: transparent;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: var(--spacing-xl);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .logo {
+            margin-right: var(--spacing-xl);
+        }
+
+        .logo img {
+            width: 40px;
+            height: auto;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-xl);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            transition: all 0.3s ease;
+            font-size: var(--text-sm);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--text-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-full);
+            font-weight: 400;
+            font-size: var(--text-base);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            font-family: 'Epilogue', sans-serif;
+        }
+
+        .btn::after {
+            display: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-sm {
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: var(--text-xs);
+        }
+
+        .btn-lg {
+            padding: var(--spacing-md) var(--spacing-2xl);
+            font-size: var(--text-md);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--card-hover);
+            transform: translateY(-5px);
+        }
+
+        /* Grids */
+        .grid {
+            display: grid;
+            gap: var(--spacing-xl);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* Footer */
+        .footer {
+            padding: var(--spacing-2xl) var(--spacing-xl);
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .social-link {
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            padding: 10px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.7;
+        }
+
+        .social-link::after {
+            display: none;
+        }
+
+        .copyright {
+            font-size: var(--text-sm);
+            color: var(--light-text);
+        }
+
+        /* Utilidades */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-sm { margin-bottom: var(--spacing-sm); }
+        .mb-md { margin-bottom: var(--spacing-md); }
+        .mb-lg { margin-bottom: var(--spacing-lg); }
+        .mb-xl { margin-bottom: var(--spacing-xl); }
+        .mb-2xl { margin-bottom: var(--spacing-2xl); }
+
+        .mt-sm { margin-top: var(--spacing-sm); }
+        .mt-md { margin-top: var(--spacing-md); }
+        .mt-lg { margin-top: var(--spacing-lg); }
+        .mt-xl { margin-top: var(--spacing-xl); }
+        .mt-2xl { margin-top: var(--spacing-2xl); }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header {
+                padding: var(--spacing-md);
+                background-color: var(--background-color);
+            }
+
+            .nav {
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: var(--text-3xl);
+            }
+
+            h2 {
+                font-size: var(--text-xl);
+            }
+
+            .section {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+            }
+
+            .menu-toggle div {
+                width: 25px;
+                height: 2px;
+                background-color: var(--primary-color);
+                margin: 5px 0;
+            }
+
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                background-color: var(--background-color);
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: 200px;
+                padding: var(--spacing-md);
+                border-radius: var(--radius-sm);
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+        }
+
+        /* Página de demonstração */
+        .ds-section {
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-md);
+        }
+
+        .color-sample {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .text-sample {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .type-scale {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .gap-md {
+            gap: var(--spacing-md);
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="#" class="logo"><img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg"></a>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#cores" class="nav-link">Cores</a></li>
+                <li><a href="#tipografia" class="nav-link">Tipografia</a></li>
+                <li><a href="#botoes" class="nav-link">Botões</a></li>
+                <li><a href="#cards" class="nav-link">Cards</a></li>
+                <li><a href="#componentes" class="nav-link">Componentes</a></li>
+                <li><a href="#" class="btn btn-primary">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section" style="padding-top: 150px;">
+            <div class="tag"><span>Versão</span> <span>1.0.0</span></div>
+            <h1 class="text-center">Kaizen <br>Design System</h1>
+            <p class="text-center mb-2xl" style="max-width: 600px; margin: 0 auto; color: var(--light-text);">Este documento apresenta os componentes, padrões e diretrizes visuais que compõem o design system do site ofabio.com.br. O objetivo é garantir consistência visual e funcional em todas as páginas do site.</p>
+        </section>
+
+        <section id="cores" class="ds-section">
+            <h2>Paleta de Cores</h2>
+            <p class="mb-xl">A paleta de cores foi projetada para transmitir minimalismo, elegância e sofisticação.</p>
+            
+            <h3 class="mb-lg">Cores Principais</h3>
+            <div class="flex gap-md flex-wrap mb-xl">
+                <div>
+                    <div class="color-sample" style="background-color: var(--primary-color);">Primary</div>
+                    <code>#000000</code>
+                </div>
+                <div>
+                    <div class="color-sample" style="background-color: var(--secondary-color);">Secondary</div>
+                    <code>#333333</code>
+                </div>
+                <div>
+                    <div class="color-sample" style="background-color: var(--accent-color);">Accent</div>
+                    <code>#000000</code>
+                </div>
+                <div>
+                    <div class="color-sample" style="background-color: var(--background-color); color: var(--text-color);">Background</div>
+                    <code>#E7E5DE</code>
+                </div>
+            </div>
+            
+            <h3 class="mb-lg">Cores de Interface</h3>
+            <div class="flex gap-md flex-wrap">
+                <div>
+                    <div class="color-sample" style="background-color: var(--text-color);">Text</div>
+                    <code>#000000</code>
+                </div>
+                <div>
+                    <div class="color-sample" style="background-color: var(--light-text);">Light Text</div>
+                    <code>#333333</code>
+                </div>
+                <div>
+                    <div class="color-sample" style="background-color: var(--card-bg); color: var(--text-color); border: 1px solid rgba(0,0,0,0.1);">Card BG</div>
+                    <code>rgba(0,0,0,0.03)</code>
+                </div>
+                <div>
+                    <div class="color-sample" style="background-color: var(--card-hover); color: var(--text-color); border: 1px solid rgba(0,0,0,0.1);">Card Hover</div>
+                    <code>rgba(0,0,0,0.05)</code>
+                </div>
+            </div>
+        </section>
+
+        <section id="tipografia" class="ds-section">
+            <h2>Tipografia</h2>
+            <p class="mb-xl">Utilizamos a fonte Epilogue para todo o site, combinando elegância com excelente legibilidade.</p>
+            
+            <div class="type-scale">
+                <div class="text-sample">
+                    <h1>Título H1 - Epilogue (var(--text-5xl))</h1>
+                    <p>Usado para títulos principais e heróis de página.</p>
+                </div>
+                
+                <div class="text-sample">
+                    <h2>Título H2 - Epilogue (var(--text-2xl))</h2>
+                    <p>Usado para títulos de seção.</p>
+                </div>
+                
+                <div class="text-sample">
+                    <h3>Título H3 - Epilogue (var(--text-lg))</h3>
+                    <p>Usado para subtítulos e títulos de cards.</p>
+                </div>
+                
+                <div class="text-sample">
+                    <p style="font-size: var(--text-md);">Texto médio - Epilogue (var(--text-md)). Usado para textos em destaque e introduções de seção.</p>
+                </div>
+                
+                <div class="text-sample">
+                    <p>Texto padrão - Epilogue (var(--text-base)). Este é o texto padrão usado para a maior parte do conteúdo do site.</p>
+                </div>
+                
+                <div class="text-sample">
+                    <p style="font-size: var(--text-sm);">Texto pequeno - Epilogue (var(--text-sm)). Usado para informações secundárias, navegação e textos complementares.</p>
+                </div>
+                
+                <div class="text-sample">
+                    <div class="tag"><span>Tag</span> <span>Exemplo</span></div>
+                    <p>Tags são usadas para destacar informações relevantes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="botoes" class="ds-section">
+            <h2>Botões</h2>
+            <p class="mb-xl">Os botões são elementos interativos essenciais para a navegação e ações do usuário.</p>
+            
+            <h3 class="mb-lg">Tipos de Botão</h3>
+            <div class="flex gap-md flex-wrap mb-xl">
+                <a href="#" class="btn btn-primary">Botão Primário</a>
+                <a href="#" class="btn btn-outline">Botão Outline</a>
+            </div>
+            
+            <h3 class="mb-lg">Tamanhos de Botão</h3>
+            <div class="flex gap-md flex-wrap" style="align-items: center;">
+                <a href="#" class="btn btn-primary btn-sm">Botão Pequeno</a>
+                <a href="#" class="btn btn-primary">Botão Médio</a>
+                <a href="#" class="btn btn-primary btn-lg">Botão Grande</a>
+            </div>
+        </section>
+
+        <section id="cards" class="ds-section">
+            <h2>Cards</h2>
+            <p class="mb-xl">Cards são containers versáteis para exibir conteúdo relacionado de forma organizada.</p>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>Serviço</h3>
+                    <p>Este é um exemplo de card de serviço. Os cards são usados para apresentar informações de forma clara e concisa.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Local</h3>
+                    <p>Este é um exemplo de card de local. Os cards locais mostram endereços e informações de contato.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Blog</h3>
+                    <p>Este é um exemplo de card de blog. Os cards de blog geralmente incluem uma imagem, título e uma breve descrição.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="componentes" class="ds-section">
+            <h2>Componentes</h2>
+            <p class="mb-xl">Componentes de interface que ajudam a construir experiências consistentes.</p>
+            
+            <h3 class="mb-lg">Tags</h3>
+            <div class="flex gap-md flex-wrap mb-xl">
+                <div class="tag"><span>Status</span> <span>Ativo</span></div>
+                <div class="tag"><span>Versão</span> <span>1.0.0</span></div>
+                <div class="tag"><span>Categoria</span> <span>Design</span></div>
+            </div>
+            
+            <h3 class="mb-lg">Header de Navegação</h3>
+            <div class="card mb-xl">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="#" class="logo">Logo</a>
+                    <ul style="display: flex; list-style: none; gap: 2rem;">
+                        <li><a href="#" class="nav-link">Link 1</a></li>
+                        <li><a href="#" class="nav-link">Link 2</a></li>
+                        <li><a href="#" class="nav-link">Link 3</a></li>
+                        <li><a href="#" class="btn btn-primary">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="mb-lg">Links Sociais</h3>
+            <div class="flex gap-md flex-wrap mb-xl">
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter" style="color: white;"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram" style="color: white;"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin-in" style="color: white;"></i>
+                </a>
+            </div>
+            
+            <h3 class="mb-lg">Grids</h3>
+            <p class="mb-lg">Grid de 2 colunas:</p>
+            <div class="grid grid-2 mb-xl">
+                <div class="card">Coluna 1</div>
+                <div class="card">Coluna 2</div>
+            </div>
+            
+            <p class="mb-lg">Grid de 3 colunas:</p>
+            <div class="grid grid-3 mb-xl">
+                <div class="card">Coluna 1</div>
+                <div class="card">Coluna 2</div>
+                <div class="card">Coluna 3</div>
+            </div>
+            
+            <p class="mb-lg">Grid de 4 colunas:</p>
+            <div class="grid grid-4">
+                <div class="card">Coluna 1</div>
+                <div class="card">Coluna 2</div>
+                <div class="card">Coluna 3</div>
+                <div class="card">Coluna 4</div>
+            </div>
+        </section>
+        
+        <section id="formularios" class="ds-section">
+            <h2>Formulários</h2>
+            <p class="mb-xl">Componentes de formulário projetados para capturar dados do usuário de forma elegante.</p>
+            
+            <form style="max-width: 500px;">
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <label for="name" style="display: block; margin-bottom: var(--spacing-xs);">Nome completo</label>
+                    <input type="text" id="name" style="width: 100%; padding: var(--spacing-sm) var(--spacing-md); border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); font-family: 'Epilogue', sans-serif; font-size: var(--text-base);" placeholder="Digite seu nome">
+                </div>
+                
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <label for="email" style="display: block; margin-bottom: var(--spacing-xs);">Email</label>
+                    <input type="email" id="email" style="width: 100%; padding: var(--spacing-sm) var(--spacing-md); border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); font-family: 'Epilogue', sans-serif; font-size: var(--text-base);" placeholder="seu@email.com">
+                </div>
+                
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <label for="message" style="display: block; margin-bottom: var(--spacing-xs);">Mensagem</label>
+                    <textarea id="message" style="width: 100%; padding: var(--spacing-sm) var(--spacing-md); border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); font-family: 'Epilogue', sans-serif; font-size: var(--text-base); min-height: 150px; resize: vertical;" placeholder="Digite sua mensagem"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="logo"><img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg"><br> Kaizen DS</a>
+            
+            <div class="social-links">
+                <a href="https://www.ofabio.com.br" class="social-link">
+                    <i class="fab fa-twitter" style="color: white;"></i>
+                </a>
+                <a href="https://www.ofabio.com.br" class="social-link">
+                    <i class="fab fa-instagram" style="color: white;"></i>
+                </a>
+                <a href="https://www.ofabio.com.br" class="social-link">
+                    <i class="fab fa-linkedin-in" style="color: white;"></i>
+                </a>
+            </div>
+            
+            <p class="copyright">© 2025 ofabio.com.br. Todos os direitos reservados. Design System por <a href="https://www.ofabio.com.br">Fabio Lino</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
