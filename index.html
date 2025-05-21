@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fábio Lino - Designer de Produto especializado em Web e App. Transformo ideias em experiências digitais eficientes e escaláveis para startups e grandes empresas.">
-    <meta name="keywords" content="design de produto, UX design, UI design, design system, prototipação, design de interface, experiência do usuário">
+    <meta name="description" content="Fábio Lino - Designer de Produto especializado em criar soluções digitais para startups e grandes empresas. Design estratégico, prototipação rápida e otimização de recursos.">
+    <meta name="keywords" content="design de produto, UX design, UI design, design system, experiência do usuário, design thinking">
     <meta name="robots" content="index, follow">
-    <title>Fábio Lino · Product Design | Designer de Produto em Web e App</title>
+    <title>Fábio Lino · Product Design | Designer de Experiências Digitais</title>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8Y7DJ0V54"></script>
@@ -38,122 +38,98 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="nav container">
             <div class="logo">
-                <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40">
+                <a href="/">
+                    <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40">
+                </a>
             </div>
-            <ul>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#casos">Casos</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="https://cal.com/fabiosl/30min">Agendar agora</a></li>
+            <ul class="nav-list">
+                <li><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li><a class="nav-link" href="#casos">Casos</a></li>
+                <li><a class="nav-link" href="#contato">Contato</a></li>
+                <li><a class="nav-link cta-button" href="https://cal.com/fabiosl/30min">Agendar agora</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section id="hero" class="fadeIn">
             <div class="tag">
                 <span>FÁBIO LINO</span>
                 <span>·</span>
                 <span>PRODUCT DESIGN</span>
             </div>
-            <h1>Designer de produto em web e app</h1>
-            <p>Transformo ideias em experiências digitais eficientes e escaláveis.<br>
-            Especialista em design de produto para startups e grandes empresas.</p>
-            <a href="https://wa.me/5511977777030" class="cta-button">Fale comigo no WhatsApp</a>
-            <p class="subtitle">Tire suas dúvidas sem compromisso.</p>
+            <h1>Designer de produto especializado em experiências digitais</h1>
+            <p>Transformo ideias em produtos digitais viáveis e escaláveis.<br>
+            Design estratégico para validar hipóteses, atrair investidores e conquistar usuários.</p>
+            <a href="https://cal.com/fabiosl/30min" class="cta-button">Agende uma consultoria gratuita</a>
+            <p class="subtitle">30 minutos para discutir sua ideia e possíveis soluções.</p>
         </section>
 
         <div class="logos-grid">
-            <img src="https://global.divhunt.com/68949e74496e88dfb11e92bebbdc8a62_3345.svg" alt="Claro">
-            <img src="https://global.divhunt.com/410cb1c497b490c9c048f1e5e30f7bea_4484.svg" alt="Alelo">
-            <img src="https://global.divhunt.com/8f35f707726f93ad3561c5b604c2a548_5902.svg" alt="Cielo">
-            <img src="https://global.divhunt.com/00b801009d6a3099fb86c9dcf1b3abfa_2812.svg" alt="Porto">
-            <img src="https://global.divhunt.com/da7e51c40e02f7f99bd04f5a6034810f_4577.svg" alt="Vivo">
-            <img src="https://global.divhunt.com/d25f6ac035148e055097d7e4a634f307_3231.svg" alt="Wine">
+            <img src="https://global.divhunt.com/d25f6ac035148e055097d7e4a634f307_3231.svg" alt="Wine" loading="lazy">
+            <img src="https://global.divhunt.com/69beae6572187c69f3788cd4760df964_2016.png" alt="Pupila AI" loading="lazy">
+            <img src="https://global.divhunt.com/8f35f707726f93ad3561c5b604c2a548_5902.svg" alt="Cielo" loading="lazy">
+            <img src="https://global.divhunt.com/00b801009d6a3099fb86c9dcf1b3abfa_2812.svg" alt="Porto" loading="lazy">
+            <img src="https://global.divhunt.com/da7e51c40e02f7f99bd04f5a6034810f_4577.svg" alt="Vivo" loading="lazy">
         </div>
 
         <section id="servicos" class="section">
-            <h2>💡 Como posso ajudar</h2>
+            <h2>🚀 Como posso ajudar seu produto</h2>
             <div class="servicos-grid">
                 <div class="servico-card">
-                    <h3>Estratégia de produto digital</h3>
-                    <p>Desenvolvimento de estratégias eficientes para produtos digitais.</p>
+                    <h3>Estratégia de produto</h3>
+                    <p>Desenvolvimento de estratégias para produtos digitais com foco em resultados.</p>
                 </div>
                 <div class="servico-card">
-                    <h3>Prototipação e testes com usuários</h3>
-                    <p>Testes com usuários e validação de hipóteses.</p>
+                    <h3>Prototipação rápida</h3>
+                    <p>Criação de protótipos interativos para validação rápida de ideias.</p>
                 </div>
                 <div class="servico-card">
-                    <h3>Design system e documentação</h3>
-                    <p>Criação e documentação de sistemas de design.</p>
+                    <h3>Design systems</h3>
+                    <p>Construção de sistemas de design para garantir consistência e escalabilidade.</p>
                 </div>
                 <div class="servico-card">
-                    <h3>Integração com times de desenvolvimento</h3>
-                    <p>Colaboração eficiente com times de desenvolvimento.</p>
-                </div>
-                <div class="servico-card">
-                    <h3>Otimização de jornadas e fluxos</h3>
-                    <p>Melhoria de fluxos e experiências do usuário.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="locais" class="section">
-            <h2>🌎 Onde atuo</h2>
-            <div class="locais-grid">
-                <div class="local-card">
-                    <h3>Serra, Espírito Santo - Brasil</h3>
-                    <p>Atendimento presencial e remoto</p>
-                </div>
-                <div class="local-card">
-                    <h3>Vitória, Espírito Santo - Brasil</h3>
-                    <p>Atendimento presencial e remoto</p>
-                </div>
-                <div class="local-card">
-                    <h3>Vila Madalena, São Paulo - Brasil</h3>
-                    <p>Atendimento presencial e remoto</p>
-                </div>
-                <div class="local-card">
-                    <h3>Pinheiros, São Paulo - Brasil</h3>
-                    <p>Atendimento presencial e remoto</p>
+                    <h3>UX Research</h3>
+                    <p>Pesquisa com usuários para entender necessidades e validar soluções.</p>
                 </div>
             </div>
         </section>
 
         <section id="casos" class="section">
-            <h2>📚 Casos de Sucesso</h2>
+            <h2>📈 Casos de Sucesso</h2>
             <div class="casos-grid">
                 <article class="caso">
-                    <img src="https://global.divhunt.com/69beae6572187c69f3788cd4760df964_2016.png" alt="Pupila AI">
+                    <img src="https://global.divhunt.com/69beae6572187c69f3788cd4760df964_2016.png" alt="Pupila AI" loading="lazy">
                     <h3>Pupila AI</h3>
-                    <p class="industria">Indústria: Branding</p>
+                    <p class="industria">Indústria: Branding com IA</p>
                     <div class="caso-content">
-                        <p>Em 2024, fiz parte do time de design da Pupila AI, hub de plataformas de branding com recursos de inteligência artificial. Atuei no desenvolvimento dos produtos <strong>Brand Zone</strong> e <strong>Brand Studio</strong>, ajudando a transformar manuais de marcas em formatos digitais e criando recursos de AI para gerar imagens alinhadas aos parâmetros de cada marca.</p>
-                        
-                        <h4>Principais entregas:</h4>
+                        <p>Trabalhei com a Pupila AI desde seus estágios iniciais, ajudando a transformar uma ideia inovadora em um produto digital viável que atraiu investidores e primeiros clientes.</p>
+
+                        <h4>Desafios:</h4>
                         <ul>
-                            <li>Mapeamento da jornada do usuário e cenários de uso</li>
-                            <li>Prototipação de novas funcionalidades, com iteração constante</li>
-                            <li>Prioridade em funcionalidades como templates para brandbooks e otimização da galeria de fotos</li>
+                            <li>Criar uma experiência intuitiva para uma tecnologia complexa (IA)</li>
+                            <li>Desenvolver rapidamente um MVP para validar o modelo de negócio</li>
+                            <li>Estabelecer uma identidade visual diferenciada no mercado</li>
                         </ul>
 
                         <h4>Resultados:</h4>
                         <ul>
-                            <li>Eficiência na prototipação de 2 produtos em aproximadamente 320 horas</li>
-                            <li>Ganho de 50% no tempo de lançamento de melhorias</li>
+                            <li>MVP lançado em <strong>apenas 8 semanas</strong></li>
+                            <li>Aumento de <strong>320%</strong> na produtividade no redesign</li>
+                            <li>Produto apresentado e definido com sucesso </li>
                         </ul>
                     </div>
                 </article>
 
                 <article class="caso">
-                    <img src="https://global.divhunt.com/2bc714da36d948fa6dcaaf7b85fcf672_7441.svg" alt="Minha Claro móvel">
+                    <img src="https://global.divhunt.com/2bc714da36d948fa6dcaaf7b85fcf672_7441.svg" alt="Minha Claro móvel" loading="lazy">
                     <h3>Minha Claro Móvel</h3>
                     <p class="industria">Indústria: Auto-atendimento</p>
                     <div class="caso-content">
@@ -171,30 +147,7 @@
                             <li>Aumento de <strong>1 milhão de acessos</strong></li>
                             <li>Redução de <strong>90% dos problemas técnicos</strong></li>
                             <li>Economia de <strong>R$ 481 milhões</strong> em atendimentos digitais</li>
-                            <li><strong>R$ 6,5 milhões</strong> em arrecadações com migração de planos e <strong>R$ 66,5 milhões</strong> com recargas</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="caso">
-                    <img src="https://global.divhunt.com/709cd89145a294c58e6e1d09f438ed25_10542.svg" alt="Claro">
-                    <h3>Claro - Re-design de Produtos Digitais com Design System</h3>
-                    <p class="industria">Indústria: Telecomunicações</p>
-                    <div class="caso-content">
-                        <p>Em 2018, fui o primeiro integrante do time de Design Ops da Claro, criando o <strong>Mondrian Design System</strong> para a fusão com a NET.</p>
-
-                        <h4>Principais desafios:</h4>
-                        <ul>
-                            <li>Entender as necessidades da empresa e dos times</li>
-                            <li>Mapear interfaces e criar bibliotecas de estilo</li>
-                            <li>Suporte contínuo e treinamento para implementação do sistema</li>
-                        </ul>
-
-                        <h4>Resultados:</h4>
-                        <ul>
-                            <li><strong>30% mais produtividade</strong> ao usar as bibliotecas</li>
-                            <li>Aceitação em <strong>90% dos times</strong> e mais de <strong>70% dos elementos visuais</strong> padronizados</li>
-                            <li>Premiado pela <strong>Cielo</strong> na categoria <strong>Melhor Produto 360º</strong></li>
+                            <li><strong>R$ 6,5 milhões</strong> em arrecadações com migração de planos</li>
                         </ul>
                     </div>
                 </article>
@@ -202,51 +155,70 @@
         </section>
 
         <section id="contato" class="section">
-            <h2>📞 Entre em contato</h2>
+            <h2>📱 Vamos conversar sobre seu projeto?</h2>
             <div class="contato-grid">
-                <a href="mailto:contato@ofabio.com.br" class="contato-card">
-                    <img src="https://global.divhunt.com/1cc4237d948732e595092d7da6bc2465_1682.svg" alt="E-mail">
-                    <span>E-mail</span>
-                    <span class="contato-info">contato@ofabio.com.br</span>
-                </a>
-                <a href="https://wa.me/5511977777030" class="contato-card">
-                    <img src="https://global.divhunt.com/9d22c3102b84b89f62d10b8f7bc5ad2f_755.svg" alt="WhatsApp">
+                <div class="contato-card">
+                    <img src="https://global.divhunt.com/1cc4237d948732e595092d7da6bc2465_1682.svg" alt="Ícone de calendário" loading="lazy">
+                    <span>Agende uma call</span>
+                    <p class="contato-info">30 minutos para discutir sua ideia e possíveis soluções</p>
+                    <a href="https://cal.com/fabiosl/30min" class="cta-button">Agendar agora</a>
+                </div>
+                <div class="contato-card">
+                    <img src="https://global.divhunt.com/9d22c3102b84b89f62d10b8f7bc5ad2f_755.svg" alt="Ícone de email" loading="lazy">
+                    <span>Email</span>
+                    <p class="contato-info">fabio@ofabio.com.br</p>
+                    <a href="mailto:fabio@ofabio.com.br" class="cta-button">Enviar email</a>
+                </div>
+                <div class="contato-card">
+                    <img src="https://global.divhunt.com/7f0395d525b8dad6e516f90c06ca86f3_329.svg" alt="Ícone de WhatsApp" loading="lazy">
                     <span>WhatsApp</span>
-                    <span class="contato-info">Clique para conversar</span>
-                </a>
-                <a href="https://cal.com/fabiosl/30min" class="contato-card">
-                    <img src="https://global.divhunt.com/9d22c3102b84b89f62d10b8f7bc5ad2f_755.svg" alt="Calendário">
-                    <span>Calendário</span>
-                    <span class="contato-info">Agende uma conversa</span>
-                </a>
+                    <p class="contato-info">+55 11 99999-9999</p>
+                    <a href="https://wa.me/5511999999999" class="cta-button">Enviar mensagem</a>
+                </div>
             </div>
-        </section>
-
-        <section id="cta" class="section">
-            <h2>⚡ Pronto para transformar o design da sua empresa?</h2>
-            <p>Agende uma conversa de 30 minutos comigo para explorar como podemos fazer seu produto crescer.</p>
-            <a href="https://cal.com/fabiosl/30min" class="cta-button">Agendar agora</a>
         </section>
     </main>
 
-    <footer>
-        <div class="logo">
-            <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo mb-md">
+                    <a href="/">
+                        <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="#servicos">Serviços</a></li>
+                        <li><a class="nav-link" href="#casos">Casos</a></li>
+                        <li><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="social-links mb-md">
+                    <a href="https://www.linkedin.com/in/fabio-lino/" aria-label="LinkedIn" class="social-link">
+                        <img src="https://global.divhunt.com/1a04fe3589ac56978a01561aef6e6e25_988.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.behance.net/fabiosl" aria-label="Behance" class="social-link">
+                        <img src="https://global.divhunt.com/63545ac4922ea3bae7c616f725be6553_2563.svg" alt="Behance">
+                    </a>
+                    <a href="https://www.instagram.com/ofabiobr/" aria-label="Instagram" class="social-link">
+                        <img src="https://global.divhunt.com/6b6d39c302d06ecb79e8ebe83b79df3c_3924.svg" alt="Instagram">
+                    </a>
+                    <a href="https://x.com/ofabio055" aria-label="X" class="social-link">
+                        <img src="https://global.divhunt.com/7f0395d525b8dad6e516f90c06ca86f3_329.svg" alt="X">
+                    </a>
+                </div>
+                <p class="copyright">
+                    © Todos os direitos reservados - <a href="https://www.ofabio.com.br">www.ofabio.com.br</a>
+                </p>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#casos">Casos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/fabio-lino/" aria-label="LinkedIn"><img src="https://global.divhunt.com/1a04fe3589ac56978a01561aef6e6e25_988.svg" alt="LinkedIn"></a>
-            <a href="https://www.behance.net/fabiosl" aria-label="Behance"><img src="https://global.divhunt.com/63545ac4922ea3bae7c616f725be6553_2563.svg" alt="Behance"></a>
-            <a href="https://www.instagram.com/ofabiobr/" aria-label="Instagram"><img src="https://global.divhunt.com/6b6d39c302d06ecb79e8ebe83b79df3c_3924.svg" alt="Instagram"></a>
-            <a href="https://x.com/ofabio055" aria-label="X"><img src="https://global.divhunt.com/7f0395d525b8dad6e516f90c06ca86f3_329.svg" alt="X"></a>
-          </div>
-        <p class="copyright">© Todos os direitos reservados - <a href="https://www.ofabio.com.br">www.ofabio.com.br</a></p>
     </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 

@@ -44,25 +44,27 @@
     }
     </script>
 
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="nav container">
             <div class="logo">
-                <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40">
+                <a href="/">
+                    <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40">
+                </a>
             </div>
-            <ul>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#casos">Casos</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="https://cal.com/fabiosl/30min">Agendar agora</a></li>
+            <ul class="nav-list">
+                <li><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li><a class="nav-link" href="#casos">Casos</a></li>
+                <li><a class="nav-link" href="#contato">Contato</a></li>
+                <li><a class="nav-link cta-button" href="https://cal.com/fabiosl/30min">Agendar agora</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section id="hero" class="fadeIn">
             <div class="tag">
                 <span>FÁBIO LINO</span>
@@ -250,77 +252,71 @@
             </div>
         </section>
 
-        <section id="perguntas" class="section">
-            <h2>❓ Perguntas frequentes sobre design para startups</h2>
-            <div class="casos-grid">
-                <article class="caso">
-                    <h3>Quanto custa um design para minha startup?</h3>
-                    <div class="caso-content">
-                        <p>O investimento varia conforme o estágio da sua startup e escopo do projeto. Trabalho com modelos flexíveis que se adequam a diferentes orçamentos, desde projetos pontuais até colaborações contínuas. Agende uma conversa gratuita para discutirmos o melhor formato para sua realidade.</p>
-                    </div>
-                </article>
-                <article class="caso">
-                    <h3>Quanto tempo leva para criar um MVP?</h3>
-                    <div class="caso-content">
-                        <p>Um MVP bem desenhado pode ser criado em 4-8 semanas, dependendo da complexidade. Foco em entregar rapidamente algo testável para validar hipóteses e atrair investidores, sem comprometer a qualidade da experiência do usuário e a viabilidade técnica.</p>
-                    </div>
-                </article>
-                <article class="caso">
-                    <h3>Como você trabalha com times remotos?</h3>
-                    <div class="caso-content">
-                        <p>Utilizo ferramentas colaborativas como Figma, Miro e Slack para manter a comunicação fluida e o trabalho organizado. Estabeleço rituais semanais de alinhamento e demonstração, além de documentar todas as decisões de design para manter o time sincronizado.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
         <section id="contato" class="section">
-            <h2>📞 Entre em contato</h2>
+            <h2>📱 Vamos conversar sobre seu projeto?</h2>
             <div class="contato-grid">
-                <a href="mailto:contato@ofabio.com.br" class="contato-card">
-                    <img src="https://global.divhunt.com/1cc4237d948732e595092d7da6bc2465_1682.svg" alt="E-mail" loading="lazy">
-                    <span>E-mail</span>
-                    <span class="contato-info">contato@ofabio.com.br</span>
-                </a>
-                <a href="https://wa.me/5511977777030" class="contato-card">
-                    <img src="https://global.divhunt.com/9d22c3102b84b89f62d10b8f7bc5ad2f_755.svg" alt="WhatsApp" loading="lazy">
+                <div class="contato-card">
+                    <img src="https://global.divhunt.com/1cc4237d948732e595092d7da6bc2465_1682.svg" alt="Ícone de calendário" loading="lazy">
+                    <span>Agende uma call</span>
+                    <p class="contato-info">30 minutos para discutir sua ideia e possíveis soluções</p>
+                    <a href="https://cal.com/fabiosl/30min" class="cta-button">Agendar agora</a>
+                </div>
+                <div class="contato-card">
+                    <img src="https://global.divhunt.com/9d22c3102b84b89f62d10b8f7bc5ad2f_755.svg" alt="Ícone de email" loading="lazy">
+                    <span>Email</span>
+                    <p class="contato-info">fabio@ofabio.com.br</p>
+                    <a href="mailto:fabio@ofabio.com.br" class="cta-button">Enviar email</a>
+                </div>
+                <div class="contato-card">
+                    <img src="https://global.divhunt.com/7f0395d525b8dad6e516f90c06ca86f3_329.svg" alt="Ícone de WhatsApp" loading="lazy">
                     <span>WhatsApp</span>
-                    <span class="contato-info">Clique para conversar</span>
-                </a>
-                <a href="https://cal.com/fabiosl/30min" class="contato-card">
-                    <img src="https://global.divhunt.com/9d22c3102b84b89f62d10b8f7bc5ad2f_755.svg" alt="Calendário" loading="lazy">
-                    <span>Calendário</span>
-                    <span class="contato-info">Agende uma conversa</span>
-                </a>
+                    <p class="contato-info">+55 11 99999-9999</p>
+                    <a href="https://wa.me/5511999999999" class="cta-button">Enviar mensagem</a>
+                </div>
             </div>
-        </section>
-
-        <section id="cta" class="section">
-            <h2>⚡ Sua startup merece um design que converte</h2>
-            <p>Agende uma consulta gratuita de 30 minutos para discutirmos como posso ajudar sua startup a crescer com design estratégico.</p>
-            <a href="https://cal.com/fabiosl/30min" class="cta-button">Agendar agora</a>
         </section>
     </main>
 
-    <footer>
-        <div class="logo">
-            <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40" loading="lazy">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo mb-md">
+                    <a href="/">
+                        <img src="https://global.divhunt.com/3e41e8f57ebbed882520a4fd1dc34dc0_1610.svg" alt="Fábio Lino Logo" width="40">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="#servicos">Serviços</a></li>
+                        <li><a class="nav-link" href="#casos">Casos</a></li>
+                        <li><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="social-links mb-md">
+                    <a href="https://www.linkedin.com/in/fabio-lino/" aria-label="LinkedIn" class="social-link">
+                        <img src="https://global.divhunt.com/1a04fe3589ac56978a01561aef6e6e25_988.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.behance.net/fabiosl" aria-label="Behance" class="social-link">
+                        <img src="https://global.divhunt.com/63545ac4922ea3bae7c616f725be6553_2563.svg" alt="Behance">
+                    </a>
+                    <a href="https://www.instagram.com/ofabiobr/" aria-label="Instagram" class="social-link">
+                        <img src="https://global.divhunt.com/6b6d39c302d06ecb79e8ebe83b79df3c_3924.svg" alt="Instagram">
+                    </a>
+                    <a href="https://x.com/ofabio055" aria-label="X" class="social-link">
+                        <img src="https://global.divhunt.com/7f0395d525b8dad6e516f90c06ca86f3_329.svg" alt="X">
+                    </a>
+                </div>
+                <p class="copyright">
+                    © Todos os direitos reservados - <a href="https://www.ofabio.com.br">www.ofabio.com.br</a>
+                </p>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#casos">Casos</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="https://cal.com/fabiosl/30min">Agendar agora</a></li>
-            </ul>
-        </nav>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/fabio-lino/" aria-label="LinkedIn"><img src="https://global.divhunt.com/1a04fe3589ac56978a01561aef6e6e25_988.svg" alt="LinkedIn" loading="lazy"></a>
-            <a href="https://www.behance.net/fabiosl" aria-label="Behance"><img src="https://global.divhunt.com/63545ac4922ea3bae7c616f725be6553_2563.svg" alt="Behance" loading="lazy"></a>
-            <a href="https://www.instagram.com/ofabiobr/" aria-label="Instagram"><img src="https://global.divhunt.com/6b6d39c302d06ecb79e8ebe83b79df3c_3924.svg" alt="Instagram" loading="lazy"></a>
-            <a href="https://x.com/ofabio055" aria-label="X"><img src="https://global.divhunt.com/7f0395d525b8dad6e516f90c06ca86f3_329.svg" alt="X" loading="lazy"></a>
-          </div>
-        <p class="copyright">© Todos os direitos reservados - <a href="https://www.ofabio.com.br">www.ofabio.com.br</a></p>
     </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
